@@ -7,3 +7,4 @@ jest.config.js
 .editorconfig
 .eslintignore
 .eslintrc.js
+.github
