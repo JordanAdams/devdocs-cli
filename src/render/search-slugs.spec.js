@@ -39,10 +39,10 @@ it('should search slugs', async () => {
 
   const [{ source }] = inquirer.prompt.mock.calls[0][0];
 
-  expect(source(null, 'foo')).toEqual(['foo']);
-  expect(source(null, 'bar')).toEqual(['bar']);
-  expect(source(null, 'baz')).toEqual(['baz']);
-  expect(source(null, null)).toEqual([]);
+  expect(await source(null, 'foo')).toEqual(['foo']);
+  expect(await source(null, 'bar')).toEqual(['bar']);
+  expect(await source(null, 'baz')).toEqual(['baz']);
+  expect(await source(null, null)).toEqual([]);
 });
 
 it('should use the passed slug', async () => {
@@ -50,10 +50,10 @@ it('should use the passed slug', async () => {
 
   const [{ source }] = inquirer.prompt.mock.calls[0][0];
 
-  expect(source(null, 'foo')).toEqual(['foo']);
-  expect(source(null, 'bar')).toEqual(['bar']);
-  expect(source(null, 'baz')).toEqual(['baz']);
-  expect(source(null, null)).toEqual([]);
+  expect(await source(null, 'foo')).toEqual(['foo']);
+  expect(await source(null, 'bar')).toEqual(['bar']);
+  expect(await source(null, 'baz')).toEqual(['baz']);
+  expect(await source(null, null)).toEqual([]);
 });
 
 it("should return the passed slug if it's valid", async () => {

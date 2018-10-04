@@ -22,7 +22,8 @@ export default async (passedSlug = '') => {
       type: 'autocomplete',
       name: 'slug',
       message: 'Search Docs:',
-      source: (_, input) => fuzzy.simpleFilter(input || '', slugs)
+      source: (_, input) =>
+        Promise.resolve(fuzzy.simpleFilter(input || '', slugs))
     }
   ]);
 

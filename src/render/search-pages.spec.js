@@ -42,9 +42,9 @@ it('should search entries', async () => {
 
   const [{ source }] = inquirer.prompt.mock.calls[0][0];
 
-  expect(source(null, 'Foo')).toEqual(['Foo']);
-  expect(source(null, 'Bar')).toEqual(['Bar']);
-  expect(source(null, null)).toEqual([]);
+  expect(await source(null, 'Foo')).toEqual(['Foo']);
+  expect(await source(null, 'Bar')).toEqual(['Bar']);
+  expect(await source(null, null)).toEqual([]);
 });
 
 it('should return page for result', async () => {
