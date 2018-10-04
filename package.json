@@ -1,0 +1,71 @@
+{
+  "name": "devdocs-cli",
+  "version": "0.1.0",
+  "description": "A command-line app for devdocs.io",
+  "main": "dist/cli.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanadams/devdocs-cli.git"
+  },
+  "author": "Jordan Adams <hi@jordanadams.co.uk>",
+  "license": "MIT",
+  "private": false,
+  "bin": {
+    "devdocs": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "yarn build:clean && yarn build:js && yarn build:bin",
+    "build:clean": "rimraf dist",
+    "build:js": "NODE_ENV=production babel src --out-dir dist",
+    "build:bin": "cp -r ./src/bin ./dist/bin && yarn build:permissions",
+    "build:permissions": "chmod +x ./dist/bin/*",
+    "cache:init": "mkdirp $HOME/.devdocs-cli/cache",
+    "test": "jest",
+    "test:watch": "jest --watch --onlyChanged",
+    "lint": "eslint --ext .js .",
+    "hooks:pre-commit": "yarn lint && yarn test",
+    "postinstall": "yarn cache:init"
+  },
+  "keywords": [
+    "devdocs",
+    "cli"
+  ],
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "cache-manager": "^2.9.0",
+    "cache-manager-fs": "^1.0.6",
+    "chalk": "^2.4.1",
+    "devdocs-client": "^0.1.0",
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.0",
+    "inquirer-autocomplete-prompt": "^1.0.1",
+    "open": "^0.0.5"
+  },
+  "bugs": {
+    "url": "https://github.com/jordanadams/devdocs-cli/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn hooks:pre-commit"
+    }
+  },
+  "homepage": "https://github.com/jordanadams/devdocs-cli#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "chmod": "^0.2.1",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "husky": "^1.0.0-rc.15",
+    "jest": "^23.6.0",
+    "mkdirp": "^0.5.1",
+    "prettier": "^1.14.3",
+    "rimraf": "^2.6.2"
+  }
+}

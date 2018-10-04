@@ -1,0 +1,10 @@
+{
+  "plugins": [],
+  "presets": ["@babel/env"],
+  "env": {
+    "production": {
+      "ignore": ["**/*.spec.js", "**/__fixtures__/**"],
+      "sourceMaps": true
+    }
+  }
+}

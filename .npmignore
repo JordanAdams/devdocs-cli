@@ -1,0 +1,9 @@
+!dist
+
+src
+coverage
+jest.config.js
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc.js
