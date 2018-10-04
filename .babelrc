@@ -1,6 +1,11 @@
 {
   "plugins": [],
-  "presets": ["@babel/env"],
+  "presets": [
+    [
+      "@babel/env",
+      { "targets": { "node": 6 } }
+    ]
+  ],
   "env": {
     "production": {
       "ignore": ["**/*.spec.js"],
