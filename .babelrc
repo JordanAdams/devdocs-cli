@@ -3,7 +3,7 @@
   "presets": ["@babel/env"],
   "env": {
     "production": {
-      "ignore": ["**/*.spec.js", "**/__fixtures__/**"],
+      "ignore": ["**/*.spec.js"],
       "sourceMaps": true
     }
   }
