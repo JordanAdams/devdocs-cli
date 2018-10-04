@@ -27,6 +27,7 @@
     "test:watch": "jest --watch --onlyChanged",
     "lint": "eslint --ext .js .",
     "hooks:pre-commit": "yarn lint && yarn test",
+    "prepublish": "yarn build",
     "postinstall": "yarn cache:init"
   },
   "keywords": [
