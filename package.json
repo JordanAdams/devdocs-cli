@@ -2,7 +2,7 @@
   "name": "devdocs-cli",
   "version": "0.1.1",
   "description": "A command-line app for devdocs.io",
-  "main": "dist/cli.js",
+  "main": "dist/bin/devdocs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jordanadams/devdocs-cli.git"
@@ -14,7 +14,7 @@
   "license": "MIT",
   "private": false,
   "bin": {
-    "devdocs": "dist/devdocs"
+    "devdocs": "dist/bin/devdocs"
   },
   "scripts": {
     "build": "yarn build:clean && yarn build:js && yarn build:bin",
