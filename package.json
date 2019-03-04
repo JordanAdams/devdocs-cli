@@ -1,6 +1,6 @@
 {
   "name": "devdocs-cli",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A command-line app for devdocs.io",
   "main": "dist/bin/devdocs",
   "repository": {
